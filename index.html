@@ -66,11 +66,10 @@
 
 	</head>
 	<body>
-		<audio controls autoplay hidden>
+		<audio id="myAudio">
         <source src="mus.ogg" type="audio/mpeg">
     </audio>
 	<div id="page">
-
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg1.jpg); height: 100vh; background-size: 100% auto" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -86,9 +85,8 @@
 		<iframe  class="itimer"  src="timer/index.html" allowtransparency="true"></iframe>
 							<br><br><br><br>
 							<center>
-								<p style="font-family: candara; color: white;">Kepada Yth. Bapak/Ibu/Saudara/i</p>
 							</center>
-							<iframe style="border:  none; width: 100vw; height: 60vh; position: absolute; left: -3vw;" src="form.html"></iframe>
+							<iframe onmouseover="playAudio()" style="border:  none; width: 100vw; height: 60vh; position: absolute; left: -3vw;" src="form.html"></iframe>
 						</div>
 					</div>
 				</div>
@@ -355,6 +353,19 @@
         enableUtc: false
     });
 </script>
+
+			<script type="text/javascript">
+				var x = document.getElementById("myAudio");
+
+function playAudio() {
+  x.play();
+  alert('ok');
+}
+
+function pauseAudio() {
+  x.pause();
+}
+			</script>
 </body>
 </html>
 
