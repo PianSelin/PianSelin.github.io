@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/dX48M38FTCZVwuIw/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<style>
+    * {
+      font-family: candara;
+    }
+
+  label {
+    color: white;
+  }
+
+  .inama {
+    text-align: center;
+    background: transparent;
+    border:  none;
+    border-bottom: 1px solid white;
+    outline: transparent;
+  }
+
+  .ipesan {
+    outline: transparent;
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+
+  .kirim {
+    background: transparent;
+    border-radius: 100px;
+    padding: 10px 20px;
+    color: white;
+    border: 1px solid white;
+  }
+</style>
+
+<body>
+  <center>
+  <form id="myForm">
+    <label>Nama</label>
+    <br/>
+    <input placeholder="Masukan Nama Anda" class="inama" name="Nama" />
+    <br/>
+    
+    <br/>
+    <br/>
+    <label>Pesan</label>
+    <br/>
+    <textarea class="ipesan" placeholder="Tulis Pesan Anda" name="Pesan">
+    </textarea>
+    <br/>
+    <br/>
+  </form>
+  <button class="kirim" onclick="SubForm()">Kirim</button>
+</center>
+</body>
+</html>
